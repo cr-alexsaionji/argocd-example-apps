@@ -11,6 +11,14 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["sleep", "10"]
+        command: ["touch", "/data/111"]
+        volumeMounts:
+        - mountPath: /data
+          name: data
+          subPath: app1
       restartPolicy: Never
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: 'my-pvc'
   backoffLimit: 0
