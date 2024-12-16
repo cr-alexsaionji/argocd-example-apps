@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+    annotations:
+        volume.kubernetes.io/selected-node: orbstack
+    name: my-pvc
+spec:
+    accessModes:
+      - ReadWriteOnce
+    storageClassName: myvolume
+    resources:
+        requests:
+            storage: 1Gi
