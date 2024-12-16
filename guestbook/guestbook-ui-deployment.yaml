@@ -18,11 +18,11 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
-      volumeMounts:
-        - mountPath: /data
-          name: data
-          subPath: app1
-  volumes:
-    - name: data
-      persistentVolumeClaim:
-        claimName: 'my-pvc'
+        volumeMounts:
+          - mountPath: /data
+            name: data
+            subPath: app1
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: 'my-pvc'
